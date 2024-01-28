@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Log in and Sign up</title>
+    <link href="/static/style.css" rel="stylesheet">
+    <script src="/static/process.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="error-message">
+            <label>{{ error }}</label>
+        </div>
+    <div class="card">
+
+
+        <div class="card-buttons">
+            <button id="loginbutton" onclick="toggleForm('loginForm')">Login
+                <div class="arrow-wrapper"><div class="arrow"></div></div>
+            </button>
+            <button id="signinbutton" onclick="toggleForm('signinForm')">Sign Up
+                <div class="arrow-wrapper"><div class="arrow"></div></div>
+            </button>
+        </div>
+
+        <form id="loginForm" class="form" style="display: none;" action="/login" method="post">
+            <div class="title">Welcome,<br><span>Login to continue</span></div>
+            <input type="text" id="login_username" name="login_username" placeholder="Username" class="input">
+            <input type="password" id="login_password" name="login_password" placeholder="Password" class="input">
+            <div class="button-container">
+                <input type="submit" value="login" class="button-confirm" name ='login_button'>
+            </div>
+        </form>
+
+        <form id="signinForm" class="form" style="display: none;" action="/login" method="post">
+            <div class="title">Welcome,<br><span>Sign up to continue</span></div>
+            <input type="text" id="sign_in_username" name="sign_in_username" placeholder="Username" class="input">
+            <input type="password" id="sign_in_password" name="sign_in_password" placeholder="Password" class="input">
+            <input type="password" id="confirmation" name="confirmation" placeholder="Re-enter Password" class="input">
+            <div class="button-container">
+                <input type="submit" value="Sign up" class="button-confirm" name ='sign_in_button'>
+
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>
